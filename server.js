@@ -9,22 +9,27 @@
 *
 ********************************************************************************/ 
 
-
+const exphbs = require('express-handlebars');
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const RestaurantDB = require("./modules/restaurantDB.js");
 const db = new RestaurantDB("mongodb+srv://jkim551:Jeju2020!@cluster0.6i7q5.mongodb.net/sample_restaurants?retryWrites=true&w=majority");
-
 const app = express();
+
+app.engine('.hbs', exphbs({ extname: '.hbs' }));
+app.set('engine', '.hbs');
+
 app.use (cors());
 app.use(bodyParser.json());
 
 const HTTP_PORT = process.env.PORT || 8080;
 
-app.get("/", (req, res) => {
-    res.json({ message: "API LISTENING" });
-  });
+app.get("/", function(req,res){
+  res.render("index.hbs", {
+      layout: false
+  })
+})
 
 //API ROUTE
 
