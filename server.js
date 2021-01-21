@@ -5,7 +5,7 @@
 * (including web sites) or distributed to other students.
 *
 * Name: Joochan Kim Student ID: 159616184 Date: 2021-01-21
-* Heroku Link: _______________________________________________________________
+* Heroku Link: https://joochan-web422.herokuapp.com/
 *
 ********************************************************************************/ 
 
